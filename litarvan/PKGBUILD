@@ -1,34 +1,34 @@
 # Maintainer: Kyle Laker <kyle+aur at laker dot email>
 # Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
-_basepkg="victory-lightdm-litarvan"
-pkgname="victory-lightdm-litarvan-git"
-#pkgname=lightdm-webkit-theme-litarvan
+_basepkg="victory-lightdm-litarvan-git"
+pkgname=victory-lightdm-litarvan-git
+_pkgname=victory-lightdm-litarvan
 pkgver=1.0
 pkgrel=1
-pkgdesc='Modern and full-featured LightDM theme'
+pkgdesc="Modern and full-featured LightDM theme"
 arch=('any')
-#_github="github.com/Litarvan/$_basepkg"
+_github="github.com/Vicck-tech/$_pkgname"
 url="https://github.com/Vicck-tech/victory-lightdm-litarvan"
 license=('BSD')
-depends=('lightdm-webkit2-greeter' 'Lightdm')
-conflicts=("lightdm-webkit-theme-litarvan")
-provides=("$_basepkg")
+depends=('lightdm-webkit2-greeter')
+conflicts=("lightdm-webkit-theme-litarvan" "victory-lightdm-litarvan")
+provides=("$_pkgname")
 makedepends=('git' 'npm')
-source=("$_basepkg::git+https://github.com/Vicck-tech/victory-lightdm-litarvan")
+source=("victory-lightdm-litarvan::git+https://github.com/Vicck-tech/victory-lightdm-litarvan")
 sha512sums=('SKIP')
 
-pkgver() {
-    cd "$pkgname"
-    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}
+#pkgver() {
+#    cd "$_pkgname"
+#    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+#}
 
 build() {
-    cd "$pkgname"
+    cd "$_pkgname"
     ./build.sh
 }
 
 package() {
-    cd "$pkgname/dist"
+    cd "$_pkgname/dist"
 
     install -dm 755 "$pkgdir"/usr/share/lightdm-webkit/themes/litarvan
     cp -r --no-preserve=ownership * "$pkgdir"/usr/share/lightdm-webkit/themes/litarvan/

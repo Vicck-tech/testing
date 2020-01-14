@@ -1,17 +1,18 @@
-pkgbase = lightdm-webkit-theme-litarvan-git
+pkgbase = victory-lightdm-litarvan-git
 	pkgdesc = Modern and full-featured LightDM theme
-	pkgver = 3.0.0.pre3.r23.gc79eb52
+	pkgver = 1.0
 	pkgrel = 1
-	url = https://github.com/Litarvan/lightdm-webkit-theme-litarvan
+	url = https://github.com/Vicck-tech/victory-lightdm-litarvan
 	arch = any
 	license = BSD
 	makedepends = git
 	makedepends = npm
 	depends = lightdm-webkit2-greeter
-	provides = lightdm-webkit-theme-litarvan
+	provides = victory-lightdm-litarvan
 	conflicts = lightdm-webkit-theme-litarvan
-	source = lightdm-webkit-theme-litarvan-git::git://github.com/Litarvan/lightdm-webkit-theme-litarvan/
+	conflicts = victory-lightdm-litarvan
+	source = victory-lightdm-litarvan::git+https://github.com/Vicck-tech/victory-lightdm-litarvanLitarvan/lightdm-webkit-theme-litarvan/
 	sha512sums = SKIP
 
-pkgname = lightdm-webkit-theme-litarvan-git
+pkgname = victory-lightdm-litarvan-git
 
