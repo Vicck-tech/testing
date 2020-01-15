@@ -1,0 +1,18 @@
+# Maintainer: vicck-tech
+pkgname=lightdm-fix-git
+_pkgname=lightdm-fix
+pkgver=1.0
+pkgrel=2
+pkgdesc="lightdm-fix"
+arch=('any')
+url="https://github.com/Vicck-tech/lightdm-fix"
+license=('GPL3')
+depends=("lightdm" "lightdm-webkit2-greeter")
+provides=("$_pkgname")
+conflicts=("$_pkgname" "$pkgname")
+source=('lightdm-fix::git+https://github.com/Vicck-tech/lightdm-fix.git')
+sha256sums=('SKIP')
+
+package() {
+  install -D -t "$pkgdir/usr/bin" "$srcdir/lightdm-fix"
+}
